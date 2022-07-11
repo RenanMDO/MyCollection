@@ -1,0 +1,120 @@
+.contentContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 278px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  text {
+    font-size: 1.87rem;
+    line-height: 2.26rem;
+    font-weight: 400;
+    color: var(--ngreen);
+    margin-bottom: 0.56rem;
+
+    span {
+      color: var(--white);
+    }
+  }
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .input {
+      width: 100%;
+      height: 2.31rem;
+      margin-bottom: 0.56rem;
+      border-radius: 0.31rem;
+      border: 0 none;
+      color: var(--textblue);
+      background-color: var(--dblue);
+      padding-left: 0.81rem;
+
+      &::placeholder {
+        color: var(--textblue);
+
+      }
+    }
+  }
+
+  button {
+    width: 100%;
+    height: 2.31rem;
+    margin-bottom: 1.125rem;
+    margin-top: 1.125rem;
+    border-radius: 0.31rem;
+    border: 0 none;
+    background: var(--ngreen);
+    color: #000;
+  }
+
+  .toggle {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 1.688rem;
+
+    input[type='checkbox'] {
+      visibility: hidden;
+
+      &:checked {
+        +label {
+          &:after {
+            left: 30px;
+          }
+        }
+      }
+    }
+
+    label {
+      position: relative;
+      width: 49px;
+      height: 16px;
+      background-color: var(--textblue);
+      border-radius: 10px;
+
+      &:after {
+        content: '';
+        width: 18px;
+        height: 16px;
+        background-color: var(--ngreen);
+        position: absolute;
+        border-radius: 50px;
+      }
+    }
+
+    p {
+      font-size: 0.938rem;
+      line-height: 1.134rem;
+      margin-left: 9px;
+    }
+  }
+
+  .registration {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+      color: var(--ngreen);
+      font-size: 0.938rem;
+      cursor: pointer;
+      margin-right: 0.688rem;
+    }
+
+  }
+
+}

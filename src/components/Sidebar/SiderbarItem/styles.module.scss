@@ -1,0 +1,27 @@
+.container {
+  width: 242.67px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 33px;
+
+
+  img {
+    height: 19.8px;
+  }
+
+  p {
+    color: var(--dblue);
+    justify-content: flex-start;
+  }
+}
+
+.itemMenu {
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 19.8px;
+    margin-right: 25px;
+  }
+}

@@ -1,0 +1,52 @@
+.container {
+  max-width: 329px;
+  background-color: var(--white);
+  position: absolute;
+  z-index: 1;
+}
+
+.close {
+  display: none;
+}
+
+.wrapperClose {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 33.33px;
+
+
+  .svg {
+    height: 19.8px;
+    width: 11.67px;
+    cursor: pointer;
+
+    &:hover path {
+      fill: var(--ngreen);
+    }
+  }
+}
+
+.wrapper {
+  width: 329px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  align-items: center;
+
+  span {
+    content: '';
+    width: 329px;
+    height: 1px;
+    left: 0px;
+    top: 82px;
+    background: #E5E5E5;
+    margin-bottom: 17px;
+  }
+
+  .item {
+    margin-top: 37px;
+  }
+}
