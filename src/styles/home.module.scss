@@ -42,10 +42,15 @@
       background-color: var(--dblue);
       padding-left: 0.81rem;
 
+
       &::placeholder {
         color: var(--textblue);
-
       }
+    }
+
+    span {
+      color: red;
+      margin-bottom: 12px;
     }
   }
 

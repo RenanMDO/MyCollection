@@ -11,6 +11,7 @@
   --dblue: #223041;
   --white: #fff;
   --textblue: #3D5470;
+  --swiper-navigation-size: 14px !important;
 }
 
 @media (max-width: 1080px) {
@@ -22,6 +23,16 @@
 @media (max-width: 720px) {
   html {
     font-size: 87.5%;
+  }
+}
+
+@media (max-width: 425px) {
+  .swiper-custom .swiper {
+    padding: 70px;
+
+    img {
+      height: 210px
+    }
   }
 }
 
@@ -45,4 +56,31 @@ button {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.swiper-custom .swiper {
+  padding: 10px 70px 0px 70px;
+
+  img {
+    height: 210px
+  }
+}
+
+.swiper-custom .swiper-slide {
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    opacity: 10%;
+  }
+}
+
+.swiper-custom .swiper-button-next,
+.swiper-custom .swiper-button-prev {
+  color: #00FFA3;
+  font-size: 1rem;
+}
+
+.swiper-custom .swiper-slide:hover {
+  opacity: 100%;
 }
