@@ -7,15 +7,16 @@ import styles from './styles.module.scss'
 
 interface sidebarProps {
   active: boolean,
+  handleSlide: () => {},
 }
 
-export function Sidebar({ active }: sidebarProps) {
+export function Sidebar({ active, handleSlide }: sidebarProps) {
 
   return (
     <>
       <div className={active ? (styles.container) : (styles.close)}>
         <div className={styles.wrapperClose}>
-          <img className={styles.svg} src="../images/left.svg" alt="Botão para fechar menu" />
+          <img className={styles.svg} src="../images/left.svg" alt="Botão para fechar menu" onClick={handleSlide} />
         </div>
         <div className={styles.wrapper}>
           <span />

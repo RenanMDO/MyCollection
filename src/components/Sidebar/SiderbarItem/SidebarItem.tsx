@@ -18,7 +18,7 @@ export function SidebarItem({ item }: sidebarItemProps) {
           <img src={item.icon} alt={item.alt} />
           <p>{item.title}</p>
         </div>
-        <img src='./images/right.svg' alt='Seta para direita' />
+        <img src='../images/right.svg' alt='Seta para direita' />
       </a>
     </>
   );
