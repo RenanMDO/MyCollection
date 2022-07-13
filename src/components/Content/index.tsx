@@ -1,38 +1,43 @@
+import { Slide, Slider, SliderProps } from '../Slider';
+import { Card } from './card';
+import useWindowDimensions from '../useWindowDimension';
 
-import { useState } from 'react';
-import { ContentData } from './contentData';
-import styles from './styles.module.scss'
+
+type card = {
+  title: string,
+  price: string,
+  slug: string,
+  img: string,
+  alt: string,
+}
 
 interface SlidesProps {
-  slides: {},
-
+  slides: card[]
 }
 
 export function Content({ slides }: SlidesProps) {
-  const [current, setCurrent] = useState(0);
-  const lenght = Object.keys(slides).length;
+  const { width } = useWindowDimensions();
 
-  const nextSlide = () => {
-    setCurrent(current === lenght - 1 ? 0 : current + 1)
+  const settings: SliderProps = {
+    spaceBetween: 110,
+    slidesPerView: (width >= 768 ? 3 : 1),
+    navigation: slides.length >= 3,
+    loop: true,
+
   }
-
-  const prevSlide = () => {
-    setCurrent(current === 0 ? lenght - 1 : current - 1)
-  }
-
-  console.log(current)
 
   return (
     <>
-      <div className={styles.container}>
-        <img className={styles.leftArrow} src="../images/left.svg" alt="Seta para voltar slide" onClick={prevSlide} />
-        {ContentData.map((slide, index) => {
+      <Slider settings={settings}>
+        {slides.map((card) => {
           return (
-            <img className={styles.img} src={slide.img} alt={slide.alt} />
+            <Slide key={card.slug}>
+              <Card card={card} />
+            </Slide>
           )
         })}
-        <img className={styles.rightArrow} src="../images/right.svg" alt="Seta para voltar slide" onClick={nextSlide} />
-      </div>
+
+      </Slider>
     </>
   );
 }

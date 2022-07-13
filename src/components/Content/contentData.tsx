@@ -1,7 +1,7 @@
 export const ContentData = [
   {
     title: 'ORI AND BLIND FOREST',
-    path: '/store',
+    slug: 'Ori-and-the-Blind-Forest',
     img: '../images/ori.png',
     alt: 'ORI AND BLIND FOREST capa',
     price: 'R$36,99',
@@ -10,7 +10,7 @@ export const ContentData = [
   },
   {
     title: 'Battlefield 2042',
-    path: '/store',
+    slug: 'Battlefield',
     img: '../images/btf.png',
     alt: 'Battlefield 2042 capa',
     price: 'R$39,90',
@@ -19,7 +19,7 @@ export const ContentData = [
   },
   {
     title: 'Crash Bandicoot 4: Its About Time',
-    path: '/store',
+    slug: 'Crash-Bandicoot',
     img: '../images/crs.png',
     alt: 'Crash Bandicoot 4: Its About Time capa',
     price: 'R$29,90',
@@ -28,7 +28,7 @@ export const ContentData = [
   },
   {
     title: 'Street Fighter',
-    path: '/store',
+    slug: 'Street-Fighter',
     img: '../images/stf.png',
     alt: 'Street Fighter capa',
     price: 'R$19,90',
@@ -36,8 +36,8 @@ export const ContentData = [
     description: 'Street Fighter, popularmente abreviado para SF, é uma popular série de jogos de luta na qual o jogador controla lutadores de diversas partes do mundo, cada qual com seus golpes especiais. '
   },
   {
-    title: 'HOMForza Horizon 5E',
-    path: '/store',
+    title: 'Forza Horizon 5E',
+    slug: 'Forza',
     img: '../images/forza.png',
     alt: 'Forza Horizon 5 capa',
     price: 'R$59,90',
