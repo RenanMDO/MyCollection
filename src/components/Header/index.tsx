@@ -3,23 +3,18 @@ import { Sidebar } from '../Sidebar';
 import styles from './styles.module.scss'
 
 interface HeaderProps {
-  active: boolean,
+  handleSlide: () => {},
 }
 
-export function Header() {
-  const [active, setActive] = useState(false)
+export function Header({ handleSlide }: HeaderProps) {
 
-  const handeslide = () => {
-    setActive(!active)
-  }
   return (
     <>
       <div className={styles.container}>
         <header className={styles.headerContainer}>
-          {/* <Sidebar active={active} /> */}
           <div className={styles.menu}>
-            <img src='../images/menu.svg' alt="Hamburguer Menu" onClick={handeslide} />
-            <text>My<span>Collection</span></text>
+            <img src='../images/menu.svg' alt="Hamburguer Menu" onClick={handleSlide} />
+            <p>My<span>Collection</span></p>
           </div>
           <div className={styles.content}>
             <img src='../images/Shopping-cart.svg' alt="Carrrinho de compras" className={styles.cart} />
