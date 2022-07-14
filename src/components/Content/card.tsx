@@ -1,12 +1,8 @@
 
-import Link from 'next/link';
 import { useState } from 'react';
-import styles from './styles.module.scss'
+import Link from 'next/link';
 
-
-type card = {
-
-}
+import styles from './styles.module.scss';
 
 interface SlidesProps {
   card: {
@@ -16,43 +12,37 @@ interface SlidesProps {
     img: string,
     alt: string,
   }
-
-}
-
+};
 
 export function Card({ card }: SlidesProps) {
   const [hover, setHover] = useState(false);
-
-
   return (
-    <>
-      <div className={styles.container} onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}>
-        <div className={hover ? (styles.hover) : (styles.none)}>
-          <div className={styles.header}>
-            <h1>{card.title}</h1>
-            <p>{card.price}</p>
-          </div>
-          <div className={styles.btt}>
-            <div className={styles.button}>
-              <Link href={{
-                pathname: `/store/${card.slug}`,
-                query: card,
-              }}>
-                <button>ADD CART</button>
-              </Link>
-              <Link href={{
-                pathname: `/store/${card.slug}`,
-                query: card,
-              }}>
-                <button >DETALHES</button>
-              </Link>
-            </div>
+    <div className={styles.container} onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}>
+      <div className={hover ? (styles.hover) : (styles.none)}>
+        <div className={styles.header}>
+          <h1>{card.title}</h1>
+          <p>{card.price}</p>
+        </div>
+        <div className={styles.btt}>
+          <div className={styles.button}>
+            <Link href={{
+              pathname: `/store/${card.slug}`,
+              query: card,
+            }}>
+              <button>ADD CART</button>
+            </Link>
+            <Link href={{
+              pathname: `/store/${card.slug}`,
+              query: card,
+            }}>
+              <button >DETALHES</button>
+            </Link>
           </div>
         </div>
-        <img className={styles.img} src={card.img} alt={card.alt} />
       </div>
-    </>
+      <img className={styles.img} src={card.img} alt={card.alt} />
+    </div>
   )
 }
 

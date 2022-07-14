@@ -1,11 +1,10 @@
 import Head from "next/head";
 import { Content } from "../../components/Content";
 import { ContentData } from "../../components/Content/contentData";
-import styles from './store.module.scss'
+import styles from './store.module.scss';
 
 
 export default function Store() {
-
   return (
     <>
       <Head>

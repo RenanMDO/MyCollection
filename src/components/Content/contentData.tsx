@@ -2,7 +2,7 @@ export const ContentData = [
   {
     title: 'ORI AND BLIND FOREST',
     slug: 'Ori-and-the-Blind-Forest',
-    img: '../images/ori.png',
+    img: '/images/ori.png',
     alt: 'ORI AND BLIND FOREST capa',
     price: 'R$36,99',
     tag: 'Aventura',
@@ -11,7 +11,7 @@ export const ContentData = [
   {
     title: 'Battlefield 2042',
     slug: 'Battlefield',
-    img: '../images/btf.png',
+    img: '/images/btf.png',
     alt: 'Battlefield 2042 capa',
     price: 'R$39,90',
     tag: 'Aventura',
@@ -20,7 +20,7 @@ export const ContentData = [
   {
     title: 'Crash Bandicoot 4: Its About Time',
     slug: 'Crash-Bandicoot',
-    img: '../images/crs.png',
+    img: '/images/crs.png',
     alt: 'Crash Bandicoot 4: Its About Time capa',
     price: 'R$29,90',
     tag: 'Aventura',
@@ -29,7 +29,7 @@ export const ContentData = [
   {
     title: 'Street Fighter',
     slug: 'Street-Fighter',
-    img: '../images/stf.png',
+    img: '/images/stf.png',
     alt: 'Street Fighter capa',
     price: 'R$19,90',
     tag: 'Luta',
@@ -38,7 +38,7 @@ export const ContentData = [
   {
     title: 'Forza Horizon 5E',
     slug: 'Forza',
-    img: '../images/forza.png',
+    img: '/images/forza.png',
     alt: 'Forza Horizon 5 capa',
     price: 'R$59,90',
     tag: 'Carro',

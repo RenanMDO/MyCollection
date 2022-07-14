@@ -1,16 +1,11 @@
 import { useRouter } from "next/router";
-
 import Head from "next/head";
-import styles from './styles.module.scss'
 
-
-
+import styles from './styles.module.scss';
 
 export default function Game() {
   const router = useRouter();
   const content = router.query;
-
-
   return (
     <>
       <Head>

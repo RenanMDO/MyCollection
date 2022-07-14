@@ -13,5 +13,4 @@ export const SidebarData = [
     alt: 'Avatar Menu',
 
   },
-
 ]

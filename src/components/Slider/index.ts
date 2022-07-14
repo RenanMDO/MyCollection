@@ -1,4 +1,4 @@
-import Slider from './Slider'
+import Slider from './Slider';
 
 import { SwiperProps as SliderProps, SwiperSlide } from "swiper/react";
 

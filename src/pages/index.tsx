@@ -1,12 +1,13 @@
 
-import Head from 'next/head'
+import Head from 'next/head';
 import router from 'next/router';
-import { SubmitHandler, useForm } from 'react-hook-form'
-import styles from '../styles/home.module.scss'
+import { SubmitHandler, useForm } from 'react-hook-form';
+import styles from '../styles/home.module.scss';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import Link from 'next/link';
 
-type SigninFormData = {
+type SignInFormData = {
   email: string;
   password: string;
 };
@@ -14,16 +15,15 @@ type SigninFormData = {
 const signInFormSchema = yup.object({
   email: yup.string().required().email(),
   password: yup.string().required()
-})
+});
 
 export default function Home() {
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(signInFormSchema)
-  })
+  });
 
-  const handleSignin: SubmitHandler<SigninFormData> = async (values) => {
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    router.push('/store');
+  const handleSignIn: SubmitHandler<SignInFormData> = async (values) => {
+    console.log(values)
   }
   return (
     <>
@@ -33,21 +33,30 @@ export default function Home() {
       <div className={styles.contentContainer}>
         <div className={styles.wrapper}>
           <text>My<span>Collection</span></text>
-          <form onSubmit={handleSubmit(handleSignin)}>
-            <input className={styles.input} type='email' placeholder='E-MAIL'  {...register('email', { required: true })} />
+          <form onSubmit={handleSubmit(handleSignIn)}>
+            <input
+              className={styles.input}
+              type='email'
+              placeholder='E-MAIL'
+              {...register('email', { required: true })}
+            />
             {errors.email && <span>E-mail obrigatório</span>}
-            <input className={styles.input} type='password' placeholder='SENHA'  {...register('password', { required: true })} />
+            <input
+              className={styles.input}
+              type='password'
+              placeholder='SENHA'
+              {...register('password', { required: true })}
+            />
             {errors.password && <span>Senha obrigatória</span>}
             <button type='submit'>ENTRAR</button>
           </form>
-
           <div className={styles.toggle}>
             <input type="checkbox" id="bar" />
             <label htmlFor="bar"></label>
             <p>PERMANECER LOGADO</p>
           </div>
           <div className={styles.registration}>
-            <a>cadastro</a>
+            <Link href="#">cadastro</Link>
           </div>
         </div>
       </div>

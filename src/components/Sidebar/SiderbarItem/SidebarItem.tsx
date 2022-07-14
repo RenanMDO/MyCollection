@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './styles.module.scss'
 
 interface sidebarItemProps {
@@ -12,7 +13,7 @@ interface sidebarItemProps {
 export function SidebarItem({ item }: sidebarItemProps) {
 
   return (
-    <>
+    <Link href={item.path}>
       <a className={styles.container} href={item.path}>
         <div className={styles.itemMenu}>
           <img src={item.icon} alt={item.alt} />
@@ -20,7 +21,7 @@ export function SidebarItem({ item }: sidebarItemProps) {
         </div>
         <img src='../images/right.svg' alt='Seta para direita' />
       </a>
-    </>
+    </Link>
   );
 }
 
