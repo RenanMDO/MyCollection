@@ -6,6 +6,8 @@ import styles from '../styles/home.module.scss';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import Link from 'next/link';
+import { useContext } from 'react';
+import { AuthContext } from '../contexts/AuthContext';
 
 type SignInFormData = {
   email: string;
@@ -22,8 +24,10 @@ export default function Home() {
     resolver: yupResolver(signInFormSchema)
   });
 
-  const handleSignIn: SubmitHandler<SignInFormData> = async (values) => {
-    console.log(values)
+  const { signIn } = useContext(AuthContext)
+
+  async function handleSignIn(data: any) {
+    await signIn(data)
   }
   return (
     <>
@@ -38,14 +42,14 @@ export default function Home() {
               className={styles.input}
               type='email'
               placeholder='E-MAIL'
-              {...register('email', { required: true })}
+              {...register('email')}
             />
             {errors.email && <span>E-mail obrigatório</span>}
             <input
               className={styles.input}
               type='password'
               placeholder='SENHA'
-              {...register('password', { required: true })}
+              {...register('password')}
             />
             {errors.password && <span>Senha obrigatória</span>}
             <button type='submit'>ENTRAR</button>

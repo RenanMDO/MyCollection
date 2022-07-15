@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import type { AppProps } from 'next/app';
+import { AuthProvider } from '../contexts/AuthContext';
 import { Header } from '../components/Header';
 import { Sidebar } from '../components/Sidebar';
 
@@ -18,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   return (
-    <>
+    <AuthProvider>
       {router.pathname !== "/" ? <div className={styles.header}>
         <Sidebar active={active} handleSlide={handleSlide} />
         <div className={styles.main}>
@@ -26,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </div>
       </div> : ""}
       <Component {...pageProps} />
-    </>
+    </AuthProvider>
   )
 }
 
